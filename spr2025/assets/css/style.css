@@ -700,9 +700,9 @@ h6 {
   overflow: hidden;
   border-radius: 50%;
   /* Makes the image circular */
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 20px auto;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 10px auto;
   position: relative;
 }
 
@@ -715,7 +715,7 @@ h6 {
 
 .organizer-info {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .organizer-info h4 {
@@ -761,6 +761,26 @@ h6 {
 .organizer-info .social a:hover {
   background: #f82249;
   color: #fff;
+}
+
+/* Add these new rules to reduce spacing between organizers */
+#organizers .row {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+#organizers .col-lg-3,
+#organizers .col-md-6 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* You could also change the column width to fit more per row */
+@media (min-width: 992px) {
+  #organizers .col-lg-3 {
+    flex: 0 0 20%;
+    max-width: 15%;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1671,4 +1691,80 @@ h6 {
   text-align: center;
   font-size: 13px;
   color: #ddd;
+}
+
+/* Improved Topic List Styling */
+.topic-list {
+  margin: 30px 0;
+}
+
+.topic-list ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.topic-list>ul>li {
+  flex: 0 0 calc(33.333% - 20px);
+  margin-bottom: 25px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.topic-list>ul>li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.topic-list>ul>li>span {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1aaa;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.topic-list>ul>li>ul {
+  display: block;
+  column-count: 1;
+  column-gap: 15px;
+}
+
+.topic-list>ul>li>ul>li {
+  margin-bottom: 5px;
+  position: relative;
+  padding-left: 15px;
+  break-inside: avoid;
+}
+
+.topic-list>ul>li>ul>li:before {
+  content: "•";
+  color: #f82249;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .topic-list>ul>li {
+    flex: 0 0 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .topic-list>ul>li {
+    flex: 0 0 100%;
+  }
+
+  .topic-list>ul>li>ul {
+    column-count: 1;
+  }
 }
