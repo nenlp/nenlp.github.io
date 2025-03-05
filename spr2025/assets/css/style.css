@@ -700,9 +700,9 @@ h6 {
   overflow: hidden;
   border-radius: 50%;
   /* Makes the image circular */
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 20px auto;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 10px auto;
   position: relative;
 }
 
@@ -715,7 +715,7 @@ h6 {
 
 .organizer-info {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .organizer-info h4 {
