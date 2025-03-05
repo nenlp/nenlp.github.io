@@ -100,9 +100,9 @@ h6 {
 /* Sections Header
 --------------------------------*/
 .section-header {
-  margin-bottom: 60px;
+  margin-bottom: 20px;
   position: relative;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .section-header::before {
@@ -113,13 +113,13 @@ h6 {
   height: 5px;
   background: #f82249;
   bottom: 0;
-  left: calc(50% - 25px);
+  /* left: calc(50% - 25px); */
 }
 
 .section-header h2 {
-  font-size: 36px;
+  font-size: 24px;
   text-transform: uppercase;
-  text-align: center;
+  text-align: left;
   font-weight: 700;
   margin-bottom: 10px;
 }
@@ -478,7 +478,7 @@ h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 100vh;
+  height: 60vh;
   background: url(../img/background_2_1.jpg) top center;
   background-size: cover;
   overflow: hidden;
@@ -487,13 +487,13 @@ h6 {
 
 @media (min-width: 1024px) {
   #hero {
-    background-attachment: fixed;
+    background-attachment: scroll;
   }
 }
 
 #hero:before {
   content: "";
-  background: rgba(6, 12, 34, 0.8);
+  background: rgba(6, 12, 34, 0.4);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -505,7 +505,7 @@ h6 {
   position: absolute;
   bottom: 0;
   left: 0;
-  top: 90px;
+  top: 60px;
   right: 0;
   display: flex;
   justify-content: center;
@@ -653,35 +653,22 @@ h6 {
 # About Section
 --------------------------------------------------------------*/
 #about {
-  background: url("../img/about-bg.jpg");
-  background-size: cover;
+  background: #fff;
   overflow: hidden;
   position: relative;
-  color: #fff;
+  color: #2f3138;
   padding: 60px 0 40px 0;
 }
 
-@media (min-width: 1024px) {
-  #about {
-    background-attachment: fixed;
-  }
-}
-
 #about:before {
-  content: "";
-  background: rgba(13, 20, 41, 0.8);
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
+  display: none;
 }
 
 #about h2 {
   font-size: 36px;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #fff;
+  color: #0e1b4d;
 }
 
 #about h3 {
@@ -689,13 +676,13 @@ h6 {
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 10px;
-  color: #fff;
+  color: #0e1b4d;
 }
 
 #about p {
   font-size: 16px;
   margin-bottom: 20px;
-  color: #fff;
+  color: #2f3138;
 }
 
 /*--------------------------------------------------------------
@@ -709,102 +696,73 @@ h6 {
   padding: 60px 0 30px 0;
 }
 
-#organizers .speaker {
-  position: relative;
+.organizer-img {
   overflow: hidden;
+  border-radius: 50%;
+  /* Makes the image circular */
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 20px auto;
+  position: relative;
+}
+
+.organizer-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Ensures the image covers the area without distortion */
+}
+
+.organizer-info {
+  text-align: center;
   margin-bottom: 30px;
 }
 
-#organizers .speaker .details {
-  background: rgba(6, 12, 34, 0.76);
-  position: absolute;
-  left: 0;
-  bottom: -40px;
-  right: 0;
-  text-align: center;
-  padding-top: 10px;
-  transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-#organizers .speaker .details h3 {
-  color: #fff;
-  font-size: 22px;
+.organizer-info h4 {
+  font-size: 18px;
   font-weight: 600;
   margin-bottom: 5px;
+  color: #112363;
 }
 
-#organizers .speaker .details p {
-  color: #fff;
+.organizer-info span {
+  font-style: italic;
+  display: block;
   font-size: 15px;
   margin-bottom: 10px;
-  font-style: italic;
+  color: #535074;
 }
 
-#organizers .speaker .details .social {
-  height: 40px;
+.organizer-info p {
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #413e66;
 }
 
-#organizers .speaker .details .social i {
-  line-height: 0;
-  margin: 0 2px;
+.organizer-info .social {
+  margin-top: 10px;
 }
 
-#organizers .speaker .details a {
-  color: #fff;
-}
-
-#organizers .speaker .details a:hover {
-  color: #f82249;
-}
-
-#organizers .speaker:hover .details {
-  bottom: 0;
-}
-
-#organizers-details {
-  padding: 60px 0;
-}
-
-#organizers-details .details h2 {
-  color: #112363;
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-#organizers-details .details .social {
-  margin-bottom: 15px;
-}
-
-#organizers-details .details .social a {
+.organizer-info .social a {
+  font-size: 18px;
+  display: inline-block;
   background: #e9edfb;
   color: #112363;
   line-height: 1;
-  display: inline-block;
-  text-align: center;
+  padding: 8px 0;
+  margin-right: 4px;
   border-radius: 50%;
+  text-align: center;
   width: 36px;
   height: 36px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  transition: 0.3s;
 }
 
-#organizers-details .details .social a:hover {
+.organizer-info .social a:hover {
   background: #f82249;
   color: #fff;
 }
 
-#organizers-details .details .social a i {
-  font-size: 16px;
-  line-height: 0;
-}
-
-#organizers-details .details p {
-  color: #112363;
-  font-size: 15px;
-  margin-bottom: 10px;
-}
 /*--------------------------------------------------------------
 # Speakers Section
 --------------------------------------------------------------*/
@@ -1745,4 +1703,78 @@ h6 {
   text-align: center;
   font-size: 13px;
   color: #ddd;
+}
+
+/*--------------------------------------------------------------
+# Topics List Styling
+--------------------------------------------------------------*/
+#cfp .topic-list {
+  margin: 30px 0;
+}
+
+#cfp .topic-list>ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  list-style: none;
+  padding: 0;
+}
+
+#cfp .topic-list>ul>li {
+  background: #f8f9fd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+#cfp .topic-list>ul>li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+#cfp .topic-list>ul>li>span {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: #112363;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #f82249;
+  padding-bottom: 5px;
+}
+
+#cfp .topic-list>ul>li>ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#cfp .topic-list>ul>li>ul>li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+  font-size: 15px;
+  color: #555;
+}
+
+#cfp .topic-list>ul>li>ul>li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f82249;
+}
+
+#cfp .topic-list>ul>li>ul>li:hover {
+  color: #f82249;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #cfp .topic-list>ul {
+    grid-template-columns: 1fr;
+  }
 }
