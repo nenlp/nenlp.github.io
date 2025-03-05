@@ -230,4 +230,25 @@
     })
   });
 
+  // Topics accordion functionality
+  document.addEventListener('DOMContentLoaded', function () {
+    const topicHeaders = document.querySelectorAll('#cfp .topic-header');
+
+    topicHeaders.forEach(header => {
+      header.addEventListener('click', function () {
+        this.classList.toggle('active');
+
+        // Open the first topic by default
+        if (topicHeaders.length > 0 && !document.querySelector('#cfp .topic-header.active')) {
+          topicHeaders[0].classList.add('active');
+        }
+      });
+    });
+
+    // Open the first topic by default
+    if (topicHeaders.length > 0) {
+      topicHeaders[0].classList.add('active');
+    }
+  });
+
 })()

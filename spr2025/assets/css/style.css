@@ -513,6 +513,11 @@ h6 {
   flex-direction: column;
   text-align: center;
   padding: 0 15px;
+  max-width: 1080px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (max-width: 991px) {
@@ -1767,4 +1772,25 @@ h6 {
   .topic-list>ul>li>ul {
     column-count: 1;
   }
+}
+
+/* Add more margins to the content */
+.container {
+  max-width: 1140px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1080px;
+    /* Slightly narrower than default */
+  }
+}
+
+#main section {
+  padding-left: 15px;
+  padding-right: 15px;
 }
