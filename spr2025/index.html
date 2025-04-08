@@ -23,6 +23,107 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Modal styles -->
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.7);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 800px;
+      border-radius: 5px;
+      position: relative;
+    }
+
+    .close-modal {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close-modal:hover,
+    .close-modal:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .modal-body {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .modal-header img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .modal-header-info h3 {
+      margin: 0;
+    }
+
+    .modal-header-info p {
+      margin: 5px 0;
+      color: #666;
+    }
+
+    .modal-section {
+      margin-bottom: 15px;
+    }
+
+    .modal-section h4 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .speaker-link {
+      cursor: pointer;
+      color: #007bff;
+      text-decoration: underline;
+    }
+
+    .speaker-link:hover {
+      color: #0056b3;
+    }
+
+    .talk-title.speaker-link {
+      cursor: pointer;
+      color: #007bff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .talk-title.speaker-link:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 
 <body>
@@ -110,11 +211,11 @@
               </tr>
               <tr>
                 <td><strong>09:30 AM - 10:00 AM</strong></td>
-                <td>Keynote 1: Yilun Du: <i>"Constructing Generalizable Multimodal Models through Compositional Generation"</i></td>
+                <td>Keynote 1: Yilun Du: <i><a href="#" onclick="openModal('yilun-modal'); return false;">"Constructing Generalizable Multimodal Models through Compositional Generation"</a></i></td>
               </tr>
               <tr>
                 <td><strong>10:00 AM - 10:30 AM</strong></td>
-                <td>Keynote 2: Alex Lew</td>
+                <td>Keynote 2: Alex Lew: <i><a href="#" onclick="openModal('alex-modal'); return false;">"Language Model Probabilistic Programming"</a></i></td>
               </tr>
               <tr>
                 <td><strong>10:30 AM - 10:40 AM</strong></td>
@@ -122,11 +223,11 @@
               </tr>
               <tr>
                 <td><strong>10:40 AM - 11:10 AM</strong></td>
-                <td>Keynote 3: Byron Wallace: <i>"LLMs for healthcare: Risks and interpretability methods to (possibly) mitigate them"</i></td>
+                <td>Keynote 3: Byron Wallace: <i><a href="#" onclick="openModal('byron-modal'); return false;">"LLMs for healthcare: Risks and interpretability methods to (possibly) mitigate them"</a></i></td>
               </tr>
               <tr>
                 <td><strong>11:10 AM - 11:40 AM</strong></td>
-                <td>Keynote 4: He He</td>
+                <td>Keynote 4: He He: <i><a href="#" onclick="openModal('he-modal'); return false;">Talk TBA</a></i></td>
               </tr>
               <tr>
                 <td><strong>11:40 AM - 12:50 PM</strong></td>
@@ -142,11 +243,11 @@
               </tr>
               <tr>
                 <td><strong>02:30 PM - 03:00 PM</strong></td>
-                <td>Keynote 5: Jason Weston</td>
+                <td>Keynote 5: Jason Weston: <i><a href="#" onclick="openModal('jason-modal'); return false;">Talk TBA</a></i></td>
               </tr>
               <tr>
                 <td><strong>03:00 PM - 03:30 PM</strong></td>
-                <td>Keynote 6: Yoon Kim: <i>"On the Future of Transformers"</i></td>
+                <td>Keynote 6: Yoon Kim: <i><a href="#" onclick="openModal('yoon-modal'); return false;">"On the Future of Transformers"</a></i></td>
               </tr>
               <tr>
                 <td><strong>03:30 PM - 04:20 PM</strong></td>
@@ -475,7 +576,7 @@
               </div>
               <h4>Yilun Du</h4>
               <span>Harvard University</span>
-              <div class="talk-title">Talk TBA</div>
+              <div class="talk-title speaker-link" onclick="openModal('yilun-modal'); return false;">Constructing Generalizable Multimodal Models through Compositional Generation</div>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
@@ -485,7 +586,7 @@
               </div>
               <h4>He He</h4>
               <span>New York University</span>
-              <div class="talk-title">Talk TBA</div>
+              <div class="talk-title speaker-link" onclick="openModal('he-modal'); return false;">Talk TBA</div>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
@@ -495,7 +596,7 @@
               </div>
               <h4>Yoon Kim</h4>
               <span>MIT</span>
-              <div class="talk-title">On the Future of Transformers</div>
+              <div class="talk-title speaker-link" onclick="openModal('yoon-modal'); return false;">On the Future of Transformers</div>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
@@ -505,7 +606,7 @@
               </div>
               <h4>Alex Lew</h4>
               <span>Yale University</span>
-              <div class="talk-title">Talk TBA</div>
+              <div class="talk-title speaker-link" onclick="openModal('alex-modal'); return false;">Language Model Probabilistic Programming</div>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
@@ -515,8 +616,7 @@
               </div>
               <h4>Byron Wallace</h4>
               <span>Northeastern University</span>
-              <div class="talk-title">LLMs for healthcare: Risks and interpretability methods to (possibly)
-                mitigate them</div>
+              <div class="talk-title speaker-link" onclick="openModal('byron-modal'); return false;">LLMs for healthcare: Risks and interpretability methods to (possibly) mitigate them</div>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
@@ -526,7 +626,7 @@
               </div>
               <h4>Jason Weston</h4>
               <span>Meta / New York University</span>
-              <div class="talk-title">Talk TBA</div>
+              <div class="talk-title speaker-link" onclick="openModal('jason-modal'); return false;">Talk TBA</div>
             </div>
           </div>
         </div>
@@ -982,6 +1082,187 @@
   <script src="assets/js/main.js"></script>
 
   <!--  <a href="https://info.flagcounter.com/fIO5"><img src="https://s05.flagcounter.com/count2/fIO5/bg_FFFFFF/txt_000000/border_CCCCCC/columns_6/maxflags_20/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>-->
+
+  <!-- Modal functionality -->
+  <script>
+    function openModal(modalId) {
+      document.getElementById(modalId).style.display = "block";
+      document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+    }
+    
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = "none";
+      document.body.style.overflow = "auto"; // Re-enable scrolling
+    }
+    
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+      if (event.target.classList.contains('modal')) {
+        event.target.style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+    }
+  </script>
+
+  <!-- Modal for Yilun Du -->
+  <div id="yilun-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('yilun-modal')">&times;</span>
+      <div class="modal-body">
+        <div class="modal-header">
+          <img src="assets/img/speakers/yilun.png" alt="Yilun Du">
+          <div class="modal-header-info">
+            <h3>Yilun Du</h3>
+            <p>Harvard University</p>
+            <p><strong>Talk:</strong> Constructing Generalizable Multimodal Models through Compositional Generation</p>
+          </div>
+        </div>
+        <div class="modal-section">
+          <h4>Abstract</h4>
+          <p>To construct intelligent embodied agents, it is important that models can ingest
+          and output signals in the form of images, text, actions, and various other sensor modalities.
+          However, gathering data that covers all such combinations of input data is often challenging, 
+          and existing multimodal models are often frail and sensitive to distribution shift. In this talk, 
+          I'll illustrate how we can circumvent some of these data challenges by instead constructing multimodal
+          models compositionally -- combining models that focus on different modalities such as text,
+          videos, and actions. I'll illustrate how such compositional systems enable us to construct
+          zero-shot multimodal systems that can accomplish various tasks such as reasoning, vision-language
+          captioning and robotic planning.</p>
+        </div>
+        <div class="modal-section">
+          <h4>Bio</h4>
+          <p>Yilun Du is an incoming assistant professor at Harvard University in the Kempner Institute
+           and Computer Science. He is currently a senior research scientist at Google Deepmind and 
+          previously received his PhD at MIT.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for He He -->
+  <div id="he-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('he-modal')">&times;</span>
+      <div class="modal-body">
+        <div class="modal-header">
+          <img src="assets/img/speakers/he.png" alt="He He">
+          <div class="modal-header-info">
+            <h3>He He</h3>
+            <p>New York University</p>
+            <p><strong>Talk:</strong> Talk TBA</p>
+          </div>
+        </div>
+        <div class="modal-section">
+          <h4>Abstract</h4>
+          <p>Abstract coming soon.</p>
+        </div>
+        <div class="modal-section">
+          <h4>Bio</h4>
+          <p>Bio coming soon.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Yoon Kim -->
+  <div id="yoon-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('yoon-modal')">&times;</span>
+      <div class="modal-body">
+        <div class="modal-header">
+          <img src="assets/img/speakers/yoon.jpg" alt="Yoon Kim">
+          <div class="modal-header-info">
+            <h3>Yoon Kim</h3>
+            <p>MIT</p>
+            <p><strong>Talk:</strong> On the Future of Transformers</p>
+          </div>
+        </div>
+        <div class="modal-section">
+          <h4>Abstract</h4>
+          <p>Transformers are still the dominant architecture for language modeling (and generative AI more broadly). This talk will speculate on how Transformers (in particular the attention mechanism) will change over the near future.</p>
+        </div>
+        <div class="modal-section">
+          <h4>Bio</h4>
+          <p>Yoon Kim is an assistant professor at MIT. He obtained his PhD from Harvard University.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Alex Lew -->
+  <div id="alex-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('alex-modal')">&times;</span>
+      <div class="modal-body">
+        <div class="modal-header">
+          <img src="assets/img/speakers/alex.png" alt="Alex Lew">
+          <div class="modal-header-info">
+            <h3>Alex Lew</h3>
+            <p>Yale University</p>
+            <p><strong>Talk:</strong> Language Model Probabilistic Programming</p>
+          </div>
+        </div>
+        <div class="modal-section">
+          <h4>Abstract</h4>
+          <p>Even after fine-tuning and reinforcement learning, language models can be difficult to control reliably with prompts alone. This talk proposes a new approach to specifying and executing tasks using language models, based on probabilistic programming. Language model probabilistic programs precisely and compositionally specify target distributions from which to generate samples. These distributions generally arise by applying hard and soft constraints to the default output distributions of one or more LMs. Samples can then be drawn approximately from these target distributions using sequential Monte Carlo — and their quality improved via test-time scaling of the number of particles used by the algorithm. This talk will demonstrate that language model probabilistic programs can improve downstream performance on a broad variety of tasks, from Python code generation to molecule synthesis to trip planning. It will also show how language models can themselves write language model probabilistic programs, enabling small LMs can outperform frontier models on a number of challenging tasks.</p>
+        </div>
+        <div class="modal-section">
+          <h4>Bio</h4>
+          <p>Alex Lew is an incoming Assistant Professor of Computer Science at Yale. His research focuses on the intersection of programming languages and probabilistic machine learning, aiming to develop systems and theory that facilitate the invention, application, and understanding of scalable algorithms for probabilistic modeling and inference. Alex attended graduate school under the supervision of Vikash Mansinghka and Joshua Tenenbaum. Prior to his PhD, Alex taught computer science to high school students at the Commonwealth School in Boston, MA. Alex's work has been recognized with a 2019 Facebook Probability and Programming Award, a 2020 NSF Graduate Research Fellowship, and 2023 ACM SIGPLAN and ACM SIGLOG Distinguished Paper awards.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Byron Wallace -->
+  <div id="byron-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('byron-modal')">&times;</span>
+      <div class="modal-body">
+        <div class="modal-header">
+          <img src="assets/img/speakers/bryon.png" alt="Byron Wallace">
+          <div class="modal-header-info">
+            <h3>Byron Wallace</h3>
+            <p>Northeastern University</p>
+            <p><strong>Talk:</strong> LLMs for healthcare: Risks and interpretability methods to (possibly) mitigate them</p>
+          </div>
+        </div>
+        <div class="modal-section">
+          <h4>Abstract</h4>
+          <p>Abstract coming soon.</p>
+        </div>
+        <div class="modal-section">
+          <h4>Bio</h4>
+          <p>Bio coming soon.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Jason Weston -->
+  <div id="jason-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('jason-modal')">&times;</span>
+      <div class="modal-body">
+        <div class="modal-header">
+          <img src="assets/img/speakers/jason.jpg" alt="Jason Weston">
+          <div class="modal-header-info">
+            <h3>Jason Weston</h3>
+            <p>Meta / New York University</p>
+            <p><strong>Talk:</strong> Talk TBA</p>
+          </div>
+        </div>
+        <div class="modal-section">
+          <h4>Abstract</h4>
+          <p>Abstract coming soon.</p>
+        </div>
+        <div class="modal-section">
+          <h4>Bio</h4>
+          <p>Bio coming soon.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 
