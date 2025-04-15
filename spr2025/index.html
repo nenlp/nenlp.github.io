@@ -188,28 +188,75 @@
             </p>
           </div>
         </div>
-        <a href="accepted_work.html"><h3><u>Accepted Work Announced!</u></h3></a>
+        <a href="accepted_work.html"><h3><u>Accepted Work and Awards Announced! 🎉</u></h3></a>
         <div class="container" data-aos="fade-up">
           <!-- <div class="section-header">
             <h2>Directions</h2>
           </div> -->
           <!-- <h4>Venues</h4> -->
-          <br> 
-          <div class="maps-row">
+          <!-- <br>  -->
+          <!-- <div class="maps-row">
             <div class="map-container">
               <p>Main Stage: <a href="https://maps.app.goo.gl/rrm41fCWWEaAw8A18">53 Wall St Auditorium</a> (first door on the left upon entrance)</p>
-              <!-- <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.950796308682!2d-72.9234985!3d41.309934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e7d9b5ebbb095b%3A0x4d620b20dfe660c9!2s53%20Wall%20St%2C%20New%20Haven%2C%20CT%2006511!5e0!3m2!1sen!2sus!4v1742974482479!5m2!1sen!2sus"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe> -->
             </div>
             <div class="map-container">
               <p>Poster Session: <a href="https://maps.app.goo.gl/xj1RvozC4TrsBdao7">Yale 17 Hillhouse Avenue (HLH17)</a>, Room 101 and Room 115</p>
-              <!-- <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.634549887825!2d-72.92429488436395!3d41.31475603671933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e7d9bec7f69953%3A0x9dd15d5ee9fcfb36!2sYale%20University!5e0!3m2!1sen!2sus!4v1742453882422!5m2!1sen!2sus"
-                allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+            </div>
+          </div> -->
+          
+          <!-- Event Photos Section -->
+          <!-- <div class="section-header">
+            <h3>Event Photos</h3>
+          </div> -->
+          <div class="event-photos">
+            <div class="photo-grid">
+              <!-- Add your photos here -->
+              <!-- Example structure (uncomment and replace src with actual image paths): -->
+              <div class="photo-item">
+                <img src="assets/img/event/event1.jpeg" alt="Event Photo 1">
+              </div>
+              <div class="photo-item">
+                <img src="assets/img/event/event2.jpeg" alt="Event Photo 2">
+              </div>
+              <div class="photo-item">
+                <img src="assets/img/event/event3.jpeg" alt="Event Photo 2">
+              </div>
             </div>
           </div>
+
+          <style>
+            .event-photos {
+              margin: 30px 0;
+            }
+            .photo-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+              gap: 20px;
+              padding: 20px 0;
+            }
+            .photo-item {
+              width: 100%;
+              aspect-ratio: 4/3;
+              overflow: hidden;
+              border-radius: 8px;
+              box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .photo-item img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              transition: transform 0.3s ease;
+            }
+            .photo-item img:hover {
+              transform: scale(1.05);
+            }
+            @media (max-width: 768px) {
+              .photo-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 15px;
+              }
+            }
+          </style>
         </div>
       </div>
     </section>
@@ -951,7 +998,26 @@
           <!-- Add more organizers as needed -->
         </div>
       </div>
-    </section><!-- End Organizers Section -->
+    </section>
+    
+    <section id="organizers">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Volunteers</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <p style="text-align: center;">
+              Eason Ding, Xiaoyu Yang, Iris Xia, Benlu Wang, Elizabeth Schaefer, Juliano Portela, Austin Feng, Dongsuk Jang, Ziyao Shangguan
+            </p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Volunteers Section -->
+
+    
+    <!-- End Organizers Section -->
     <!-- End Senior Organizers Section -->
 
     <!-- Sponsors -->
